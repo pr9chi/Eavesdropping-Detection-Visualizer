@@ -23,6 +23,18 @@ def run_simulator():
         print("="*60)
 
         choice = input("Enter Simulation Number: ")
+        
+        # STEP 1: Alice prepares random bits and bases
+        print("\nSTEP 1: Alice prepares qubits")
+        alice_bits = [random.randint(0, 1) for _ in range(num_qubits)]
+        alice_bases = [random.randint(0, 1) for _ in range(num_qubits)]
+        print(f"  - Alice created {num_qubits} random bits")
+        print(f"  - Alice chose random bases (0=Rectilinear, 1=Diagonal)")
+        
+        # STEP 2: Bob prepares random bases
+        print("\nSTEP 2: Bob prepares to receive")
+        bob_bases = [random.randint(0, 1) for _ in range(num_qubits)]
+        print(f"  - Bob chose his random bases")
 
         if choice == '1':
             print("\nSCENARIO 1: SECURE TRANSMISSION (No Eve)")
