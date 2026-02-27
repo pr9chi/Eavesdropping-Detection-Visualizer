@@ -24,6 +24,10 @@ def run_simulator():
 
         choice = input("Enter Simulation Number: ")
         
+        if choice == '4':
+            print("\nExiting Simulator. Stay secure!")
+            break # This exits the while loop
+        
         # STEP 1: Alice prepares random bits and bases
         print("\nSTEP 1: Alice prepares qubits")
         alice_bits = [random.randint(0, 1) for _ in range(num_qubits)]
@@ -86,10 +90,6 @@ def run_simulator():
             print(f"With Eve:    {error_rate_with_eve:.2f}% error rate")
             print(f"\nError increase: {error_rate_with_eve - error_rate_no_eve:.2f}%")
 
-        elif choice == '4':
-            print("\nExiting Simulator. Stay secure!")
-            break # This exits the while loop
-        
         else:
             print("Invalid input. Please enter 1, 2, 3 or 4.")
 
